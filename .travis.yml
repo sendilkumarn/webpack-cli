@@ -29,8 +29,7 @@ matrix:
     - node_js: "6"
       env: JOB_PART=integration
 
-before_install:
-  - if [[ "$TRAVIS_OS_NAME" != 'windows' ]]; then '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest' ; fi  # skipped when using node 9 only on linux
+before_install: if [[ "$TRAVIS_OS_NAME" != 'windows' ]]; then '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest' ; fi  # skipped when using node 9 only on linux
 
 install:
   - travis_wait npm ci
