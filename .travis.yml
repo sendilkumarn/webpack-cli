@@ -34,12 +34,12 @@ matrix:
     #   env: JOB_PART=integration
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == 'windows' && `node -v` = v6*  ]]; then 
+  - if [[ "$TRAVIS_OS_NAME" == 'windows' && `node -v` = v6* ]]; then 
       npm i -g npx;
       npx npm@latest i -g npm;
     fi
   - if [[ "$TRAVIS_OS_NAME" == 'linux' ]]; then
-	    npm i -g npm@latest;
+      npm i -g npm@latest;
     fi
 
 install:
