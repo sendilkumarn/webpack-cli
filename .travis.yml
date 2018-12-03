@@ -11,6 +11,12 @@ cache:
     - ~/.npm
 matrix:
   include:
+    - os: windows
+      node_js: "stable"
+      env: JOB_PART=lint
+    - os: windows
+      node_js: "stable"
+      env: JOB_PART=integration
     - os: linux
       node_js: "stable"
       env: JOB_PART=lint
