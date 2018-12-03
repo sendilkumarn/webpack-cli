@@ -13,12 +13,12 @@ os:
   - windows
 matrix:
   include:
-    - node_js: "8"
-      env: JOB_PART=lint
+    # - node_js: "8"
+    #   env: JOB_PART=lint
     - node_js: "10"
       env: JOB_PART=lint
-    - node_js: "stable"
-      env: JOB_PART=lint
+    # - node_js: "stable"
+    #   env: JOB_PART=lint
     # - node_js: "stable"
     #   env: JOB_PART=integration
     # - node_js: "stable"
@@ -29,7 +29,7 @@ matrix:
     #   env: JOB_PART=integration
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == 'windows' ]]; then 
+  - if [[ "$TRAVIS_OS_NAME" == 'windows' AND `node -v` = v6*  ]]; then 
       npx npm@latest i -g npm;
     fi
 
