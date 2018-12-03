@@ -3,9 +3,11 @@ notifications:
   email: false
 language: node_js
 node_js:
+  - "11"
   - "10"
   - "8"
-  # - "6"
+  - "6"
+
 cache:
   directories:
     - ~/.npm
@@ -40,7 +42,9 @@ install:
   # - npm install -g codecov
   # - npm install -g eslint
 
+if [[ "$TRAVIS_OS_NAME" == 'linux' ]]; then
 jobs:
   include:
     - stage: commit lint
       script: commitlint-travis
+fi
