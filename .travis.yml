@@ -3,9 +3,9 @@ notifications:
   email: false
 language: node_js
 node_js:
-  - "11"
-  - "10"
-  - "8"
+  #- "11"
+  #- "10"
+  #- "8"
   - "6"
 
 cache:
@@ -13,7 +13,7 @@ cache:
     - ~/.npm
 os:
   - windows
-  - linux
+  #- linux
 matrix:
   include:
     - node_js: "8"
@@ -36,6 +36,7 @@ matrix:
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == 'windows' && `node -v` = v6* ]]; then 
       travis_wait npm i -g npx;
+      npx -v;
       travis_wait npx npm@latest i -g npm;
     fi
   - if [[ "$TRAVIS_OS_NAME" == 'linux' ]]; then
