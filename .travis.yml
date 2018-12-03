@@ -3,9 +3,8 @@ notifications:
   email: false
 language: node_js
 node_js:
-  #- "11"
-  #- "10"
-  #- "8"
+  - "10"
+  - "8"
   - "6"
 
 cache:
@@ -13,25 +12,36 @@ cache:
     - ~/.npm
 os:
   - windows
-  #- linux
+  - linux
 matrix:
   include:
     - node_js: "8"
       env: JOB_PART=lint
       os: linux
-    # - node_js: "10"
-    #   env: JOB_PART=lint
-    #   os: windows
-    # - node_js: "stable"
-    #   env: JOB_PART=lint
-    # - node_js: "stable"
-    #   env: JOB_PART=integration
-    # - node_js: "stable"
-    #   env: JOB_PART=integration
-    # - node_js: "8"
-    #   env: JOB_PART=integration
-    # - node_js: "6"
-    #   env: JOB_PART=integration
+    - node_js: "10"
+      env: JOB_PART=lint
+      os: linux
+    - node_js: "stable"
+      env: JOB_PART=lint
+      os: linux
+    - node_js: "8"
+      env: JOB_PART=integration
+      os: linux
+    - node_js: "10"
+      env: JOB_PART=integration
+      os: linux
+    - node_js: "stable"
+      env: JOB_PART=integration
+      os: linux
+    - node_js: "8"
+      env: JOB_PART=integration
+      os: windows
+    - node_js: "10"
+      env: JOB_PART=integration
+      os: windows
+    - node_js: "stable"
+      env: JOB_PART=integration
+      os: windows
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == 'windows' && `node -v` = v6* ]]; then 
