@@ -13,10 +13,12 @@ cache:
     - ~/.npm
 os:
   - windows
+  - linux
 matrix:
   include:
-    # - node_js: "8"
-    #   env: JOB_PART=lint
+    - node_js: "8"
+      env: JOB_PART=lint
+      os: linux
     # - node_js: "10"
     #   env: JOB_PART=lint
     #   os: windows
@@ -39,12 +41,10 @@ before_install:
 
 install:
   - travis_wait npm ci
-  # - npm install -g codecov
-  # - npm install -g eslint
+  - npm install -g codecov
+  - npm install -g eslint
 
-if [[ "$TRAVIS_OS_NAME" == 'linux' ]]; then
 jobs:
   include:
     - stage: commit lint
       script: commitlint-travis
-fi
