@@ -38,6 +38,9 @@ before_install:
       npm i -g npx;
       npx npm@latest i -g npm;
     fi
+  - if [[ "$TRAVIS_OS_NAME" == 'linux' ]]; then
+	npm i -g npm@latest;
+    fi
 
 install:
   - travis_wait npm ci
