@@ -5,7 +5,7 @@ language: node_js
 node_js:
   - "10"
   - "8"
-  - "6"
+  # - "6"
 cache:
   directories:
     - ~/.npm
@@ -15,9 +15,9 @@ matrix:
   include:
     # - node_js: "8"
     #   env: JOB_PART=lint
-    - node_js: "10"
-      env: JOB_PART=lint
-      os: windows
+    # - node_js: "10"
+    #   env: JOB_PART=lint
+    #   os: windows
     # - node_js: "stable"
     #   env: JOB_PART=lint
     # - node_js: "stable"
@@ -37,8 +37,8 @@ before_install:
 
 install:
   - travis_wait npm ci
-  - npm install -g codecov
-  - npm install -g eslint
+  # - npm install -g codecov
+  # - npm install -g eslint
 
 jobs:
   include:
