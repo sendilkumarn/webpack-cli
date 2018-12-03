@@ -37,8 +37,6 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == 'windows' && `node -v` = v6* ]]; then 
       travis_wait npm i -g npx;
       travis_wait nvs add 10
-      npx -v;
-      travis_wait npm i -g npm@latest;
     fi
   - if [[ "$TRAVIS_OS_NAME" == 'linux' ]]; then
       npm i -g npm@latest;
