@@ -32,8 +32,6 @@ matrix:
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == 'windows' && `node -v` = v6*  ]]; then 
       npm i -g npx;
-    fi
-  - if [[ "$TRAVIS_OS_NAME" == 'windows' ]]; then 
       npx npm@latest i -g npm;
     fi
 
