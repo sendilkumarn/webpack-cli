@@ -9,6 +9,9 @@ node_js:
 cache:
   directories:
     - ~/.npm
+os:
+  - linux
+  - windows
 matrix:
   include:
     - os: windows
