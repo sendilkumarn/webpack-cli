@@ -10,7 +10,6 @@ cache:
   directories:
     - ~/.npm
 os:
-  - linux
   - windows
 matrix:
   include:
@@ -18,21 +17,18 @@ matrix:
       env: JOB_PART=lint
     - node_js: "10"
       env: JOB_PART=lint
-    - node_js: "10"
-      env: JOB_PART=integration
     - node_js: "stable"
       env: JOB_PART=lint
-    - node_js: "stable"
-      env: JOB_PART=integration
-    - node_js: "8"
-      env: JOB_PART=integration
-    - node_js: "6"
-      env: JOB_PART=integration
+    # - node_js: "stable"
+    #   env: JOB_PART=integration
+    # - node_js: "stable"
+    #   env: JOB_PART=integration
+    # - node_js: "8"
+    #   env: JOB_PART=integration
+    # - node_js: "6"
+    #   env: JOB_PART=integration
 
-before_install: 
-  - if [[ "$TRAVIS_OS_NAME" == 'linux' ]]; then 
-      '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest';
-    fi
+before_install:
   - if [[ "$TRAVIS_OS_NAME" == 'windows' ]]; then 
       npx npm@latest i -g npm;
     fi
