@@ -14,32 +14,19 @@ os:
   - windows
 matrix:
   include:
-    - os: windows
-      node_js: "8"
+    - node_js: "8"
       env: JOB_PART=lint
-    - os: windows
-      node_js: "8"
-      env: JOB_PART=integration
-    - os: windows
-      node_js: "10"
+    - node_js: "10"
       env: JOB_PART=lint
-    - os: windows
-      node_js: "10"
+    - node_js: "10"
       env: JOB_PART=integration
-    - os: linux
-      node_js: "stable"
+    - node_js: "stable"
       env: JOB_PART=lint
-    - os: linux
-      node_js: "stable"
+    - node_js: "stable"
       env: JOB_PART=integration
-    - os: linux
-      node_js: "10"
+    - node_js: "8"
       env: JOB_PART=integration
-    - os: linux
-      node_js: "8"
-      env: JOB_PART=integration
-    - os: linux
-      node_js: "6"
+    - node_js: "6"
       env: JOB_PART=integration
 
 before_install:
