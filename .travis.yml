@@ -60,3 +60,4 @@ jobs:
   include:
     - stage: commit lint
       script: commitlint-travis
+      os: linux
