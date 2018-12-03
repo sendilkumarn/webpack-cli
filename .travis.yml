@@ -39,7 +39,7 @@ before_install:
       npx npm@latest i -g npm;
     fi
   - if [[ "$TRAVIS_OS_NAME" == 'linux' ]]; then
-	npm i -g npm@latest;
+	    npm i -g npm@latest;
     fi
 
 install:
