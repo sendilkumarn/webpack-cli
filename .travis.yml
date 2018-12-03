@@ -35,14 +35,7 @@ matrix:
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == 'windows' && `node -v` = v6* ]]; then 
-      travis_wait npm i -g npx;
-      travis_wait nvs add 6;
-      travis_wait nvs link 6;
-      travis_wait nvs use 6;
-      node -v;
-      npm -v;
       npm i -g npm@latest;
-      npm -v;
     fi
   - if [[ "$TRAVIS_OS_NAME" == 'linux' ]]; then
       npm i -g npm@latest;
